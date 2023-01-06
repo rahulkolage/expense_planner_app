@@ -6,12 +6,12 @@ class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
   final Function deleteTx;
 
-  TransactionList(this.transactions,this.deleteTx, {super.key});
+  TransactionList(this.transactions, this.deleteTx, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 400,
       // using  ListView.builder() approach
       child: transactions.isEmpty
           ? Column(
