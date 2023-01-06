@@ -22,3 +22,7 @@ samples, guidance on mobile development, and a full API reference.
 ### Theming
 -   https://www.flutterbeads.com/change-theme-text-color-in-flutter/
 -   https://www.geeksforgeeks.org/flutter-themes/
+
+###
+-   Custom modal bottom sheet
+-   https://stackoverflow.com/questions/53869078/how-to-move-bottomsheet-along-with-keyboard-which-has-textfieldautofocused-is-t/57515977#57515977

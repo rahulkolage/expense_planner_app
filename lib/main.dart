@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './app.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  // New flutter requires to specify this line if using SystemChrome
+  // WidgetsFlutterBinding.ensureInitialized();
+
+  // SystemChrome.setPreferredOrientations(
+  //     [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -30,13 +39,13 @@ class MyApp extends StatelessWidget {
           button: TextStyle(color: Colors.white),
         ),
         appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.purple,
+            backgroundColor:Colors.purple,
             titleTextStyle: TextStyle(
               fontFamily: 'OpenSans',
               fontSize: 20,
             )
             // textTheme: // deprecated
-            ),
+            ),      
       ),
       home: MyHomePage(),
     );
