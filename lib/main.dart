@@ -21,7 +21,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.purple, // no effect on AppBar
         // accentColor: Colors.amber,     // deprecated
         colorScheme: ColorScheme.fromSwatch(
-            accentColor: Colors.amber, primarySwatch: Colors.purple),
+          accentColor: Colors.amber,
+          primarySwatch: Colors.purple,
+          
+        ),
         // ColorScheme.fromSwatch().copyWith(secondary: Colors.amber),
         fontFamily: 'Quicksand',
         // textTheme: ThemeData.light().textTheme.copyWith(
@@ -39,13 +42,13 @@ class MyApp extends StatelessWidget {
           button: TextStyle(color: Colors.white),
         ),
         appBarTheme: const AppBarTheme(
-            backgroundColor:Colors.purple,
+            backgroundColor: Colors.purple,
             titleTextStyle: TextStyle(
               fontFamily: 'OpenSans',
               fontSize: 20,
             )
             // textTheme: // deprecated
-            ),      
+            ),
       ),
       home: MyHomePage(),
     );
