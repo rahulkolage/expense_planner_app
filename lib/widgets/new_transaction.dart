@@ -1,5 +1,9 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import './../widgets/adaptive_flat_button.dart';
 
 // contains text fields
 
@@ -63,9 +67,9 @@ class _NewTransactionState extends State<NewTransaction> {
   Widget build(BuildContext context) {
     return // input area
         SingleChildScrollView(
-          child: Card(
-              elevation: 5,
-              child: Container(
+      child: Card(
+        elevation: 5,
+        child: Container(
           // padding: const EdgeInsets.all(10),
           // changing bottom padding to handle soft keyboard ovelapping issue on form while typing
           padding: EdgeInsets.only(
@@ -101,15 +105,7 @@ class _NewTransactionState extends State<NewTransaction> {
                             : 'Picked Date: ${DateFormat.yMd().format(_selectedDate as DateTime)}',
                       ),
                     ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                          foregroundColor: Theme.of(context).primaryColor),
-                      onPressed: _presentDatePicker,
-                      child: const Text(
-                        'Choose Date',
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                    )
+                    AdaptiveFlatButton('Choose Date', _presentDatePicker)
                   ],
                 ),
               ),
@@ -123,8 +119,8 @@ class _NewTransactionState extends State<NewTransaction> {
               )
             ],
           ),
-              ),
-            ),
-        );
+        ),
+      ),
+    );
   }
 }
