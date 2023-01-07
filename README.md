@@ -30,3 +30,6 @@ samples, guidance on mobile development, and a full API reference.
 ### Commands
 -   Open IOS simulator
 -       open -a simulator
+-   Create project with custom package name
+-   https://mukhtharcm.com/flutter-custom-package-name/
+-       flutter create --org com.myname my_app_name
