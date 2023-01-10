@@ -32,65 +32,75 @@ class TransactionList extends StatelessWidget {
               );
             },
           )
-        : ListView.builder(
-            itemBuilder: (context, index) {
-              return
-                  // Using ListTyle approach
-                  TransactionItem(
-                      transaction: transactions[index], deleteTx: deleteTx);
-
-              // Using Card approach
-              // Card(
-              //     child: Row(
-              //   children: [
-              //     Container(
-              //       padding: const EdgeInsets.all(10),
-              //       margin: const EdgeInsets.symmetric(
-              //         vertical: 10,
-              //         horizontal: 15,
-              //       ),
-              //       decoration: BoxDecoration(
-              //           border: Border.all(
-              //         // color: Colors.red,
-              //         color: Theme.of(context).primaryColor,
-              //         width: 2,
-              //       )),
-              //       child: Text(
-              //         // tx.amount.toString(),
-              //         '\$${transactions[index].amount.toStringAsFixed(2)}', // string interpolation
-              //         style: TextStyle(
-              //             fontWeight: FontWeight.bold,
-              //             fontSize: 20,
-              //             color: Theme.of(context).primaryColor),
-              //       ),
-              //     ),
-              //     Column(
-              //       crossAxisAlignment: CrossAxisAlignment.start,
-              //       children: [
-              //         Text(
-              //           transactions[index].title,
-              //           style: Theme.of(context).textTheme.headline6,
-
-              //           // here above we are refering to app bar title theme
-              //           // style: Theme.of(context).appBarTheme.titleTextStyle
-
-              //           // style: const TextStyle(
-              //           //   fontWeight: FontWeight.bold,
-              //           //   fontSize: 16,
-              //           // ),
-              //         ),
-              //         Text(
-              //           DateFormat.yMMMd().format(transactions[index].date),
-              //           style:
-              //               const TextStyle(fontSize: 16, color: Colors.grey),
-              //         ),
-              //       ],
-              //     )
-              //   ],
-              // ));
-            },
-            itemCount: transactions.length,
+        : ListView(
+            children: transactions
+                .map((tx) => TransactionItem(
+                      key: ValueKey(tx.id),
+                      transaction: tx,
+                      deleteTx: deleteTx,
+                    ))
+                .toList(),
           );
+
+    // ListView.builder(
+    //     itemBuilder: (context, index) {
+    //       return
+    //           // Using ListTyle approach
+    //           TransactionItem(
+    //               transaction: transactions[index], deleteTx: deleteTx);
+
+    //       // Using Card approach
+    //       // Card(
+    //       //     child: Row(
+    //       //   children: [
+    //       //     Container(
+    //       //       padding: const EdgeInsets.all(10),
+    //       //       margin: const EdgeInsets.symmetric(
+    //       //         vertical: 10,
+    //       //         horizontal: 15,
+    //       //       ),
+    //       //       decoration: BoxDecoration(
+    //       //           border: Border.all(
+    //       //         // color: Colors.red,
+    //       //         color: Theme.of(context).primaryColor,
+    //       //         width: 2,
+    //       //       )),
+    //       //       child: Text(
+    //       //         // tx.amount.toString(),
+    //       //         '\$${transactions[index].amount.toStringAsFixed(2)}', // string interpolation
+    //       //         style: TextStyle(
+    //       //             fontWeight: FontWeight.bold,
+    //       //             fontSize: 20,
+    //       //             color: Theme.of(context).primaryColor),
+    //       //       ),
+    //       //     ),
+    //       //     Column(
+    //       //       crossAxisAlignment: CrossAxisAlignment.start,
+    //       //       children: [
+    //       //         Text(
+    //       //           transactions[index].title,
+    //       //           style: Theme.of(context).textTheme.headline6,
+
+    //       //           // here above we are refering to app bar title theme
+    //       //           // style: Theme.of(context).appBarTheme.titleTextStyle
+
+    //       //           // style: const TextStyle(
+    //       //           //   fontWeight: FontWeight.bold,
+    //       //           //   fontSize: 16,
+    //       //           // ),
+    //       //         ),
+    //       //         Text(
+    //       //           DateFormat.yMMMd().format(transactions[index].date),
+    //       //           style:
+    //       //               const TextStyle(fontSize: 16, color: Colors.grey),
+    //       //         ),
+    //       //       ],
+    //       //     )
+    //       //   ],
+    //       // ));
+    //     },
+    //     itemCount: transactions.length,
+    //   );
 
     // using ListView(Children: []) approach
     // child: ListView(

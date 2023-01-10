@@ -33,3 +33,7 @@ samples, guidance on mobile development, and a full API reference.
 -   Create project with custom package name
 -   https://mukhtharcm.com/flutter-custom-package-name/
 -       flutter create --org com.myname my_app_name
+
+### When to use keys
+-   https://www.youtube.com/watch?v=kn0EOS-ZiIc
+-   https://dart.dev/guides/language/language-tour#initializer-list
